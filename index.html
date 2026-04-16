@@ -14,6 +14,16 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/hero-cao.jpg">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18093736701"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18093736701');
+</script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -73,7 +83,6 @@
     padding-bottom: env(safe-area-inset-bottom);
   }
   .font-display { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
-
   a, button, details summary { min-height: 44px; touch-action: manipulation; }
 
   .grain-bg { position: relative; }
@@ -93,7 +102,6 @@
   }
   .cta-pulse { animation: gentle-pulse 2.8s ease-in-out infinite; }
 
-  /* Badge 24h — pulso contínuo verde "ativo" */
   @keyframes live-dot {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.6; transform: scale(1.15); }
@@ -167,7 +175,6 @@
   }
   input, textarea, select { font-size: 16px; }
 
-  /* Badge 24h especial */
   .badge-24h {
     background: linear-gradient(135deg, #C97B5A 0%, #A55E3F 100%);
     color: #F6F1E8;
@@ -182,7 +189,6 @@
     text-transform: uppercase;
   }
 
-  /* Barra de emergência topo */
   .emergency-bar {
     background: linear-gradient(90deg, #A55E3F 0%, #C97B5A 100%);
     color: #F6F1E8;
@@ -192,7 +198,7 @@
 
 <body class="font-body text-ink">
 
-<!-- BARRA DE EMERGÊNCIA NO TOPO -->
+<!-- BARRA DE EMERGÊNCIA -->
 <div class="emergency-bar py-2.5 px-4 text-center text-xs sm:text-sm font-500">
   <span class="inline-flex items-center gap-2 flex-wrap justify-center">
     <span class="w-2 h-2 rounded-full bg-cream live-dot"></span>
@@ -280,11 +286,9 @@
   </div>
 </section>
 
-<!-- ========= NOVA SEÇÃO: EMERGÊNCIA 24H ========= -->
+<!-- EMERGÊNCIA 24H -->
 <section class="bg-midnight text-cream py-16 sm:py-20 md:py-24 relative overflow-hidden">
-  <!-- decorativo -->
   <div class="absolute top-0 right-0 w-96 h-96 bg-terracota/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-
   <div class="max-w-5xl mx-auto px-5 sm:px-6 relative">
     <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
       <div class="md:col-span-7">
@@ -292,14 +296,12 @@
           <span class="w-2 h-2 rounded-full bg-terracota live-dot"></span>
           <span class="text-xs uppercase tracking-[0.25em] text-terracota font-600">Plantão ativo agora</span>
         </div>
-
         <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-400 leading-tight mb-5 sm:mb-6">
           <em class="italic">3 da manhã</em> e seu pet começou a vomitar?
         </h2>
         <p class="text-cream/80 text-base sm:text-lg leading-relaxed mb-7 sm:mb-8">
           Emergência não espera horário comercial. Na LebreVet, você chama no WhatsApp <strong class="text-cream font-600">a qualquer hora</strong> — madrugada, fim de semana, feriado. Dr. Eduardo vai até você ou te orienta de imediato se for algo que pode aguardar.
         </p>
-
         <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-7 sm:mb-8 max-w-md">
           <div class="border-l-2 border-terracota pl-3 sm:pl-4">
             <div class="font-display text-2xl sm:text-3xl text-cream font-500 leading-none mb-1">0h–24h</div>
@@ -310,14 +312,12 @@
             <div class="text-xs text-cream/60">Tempo médio de chegada</div>
           </div>
         </div>
-
         <a href="https://wa.me/5514996068010?text=EMERG%C3%8ANCIA%21%20Meu%20pet%20est%C3%A1%20passando%20mal%20e%20preciso%20de%20atendimento%20agora."
            class="btn-primary bg-terracota hover:bg-terracota-dark text-cream">
           <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           Chamar em emergência
         </a>
       </div>
-
       <div class="md:col-span-5">
         <div class="bg-sage-dark/50 backdrop-blur rounded-3xl p-6 sm:p-8 border border-sage-light/20">
           <div class="text-xs uppercase tracking-[0.25em] text-terracota font-600 mb-4">Quando chamar</div>
@@ -336,7 +336,7 @@
   </div>
 </section>
 
-<!-- DOR AMPLIFICADA -->
+<!-- DOR -->
 <section class="bg-cream-dark py-16 sm:py-20 md:py-28 grain-bg relative">
   <div class="max-w-5xl mx-auto px-5 sm:px-6">
     <div class="text-center mb-12 sm:mb-16">
@@ -403,26 +403,21 @@
   </div>
 </section>
 
-<!-- ========= NOVA SEÇÃO: AUTORIDADE DR. EDUARDO ========= -->
+<!-- AUTORIDADE DR. EDUARDO -->
 <section class="py-16 sm:py-20 md:py-28 grain-bg relative bg-cream">
   <div class="max-w-5xl mx-auto px-5 sm:px-6">
     <div class="grid md:grid-cols-12 gap-8 sm:gap-10 md:gap-16 items-center">
-
-      <!-- Foto/avatar Dr. Eduardo -->
       <div class="md:col-span-5 order-2 md:order-1">
         <div class="relative max-w-sm mx-auto">
           <div class="image-frame shadow-2xl aspect-square">
             <img src="images/dr-lebre.jpg" alt="Dr. Eduardo Lebre — Médico Veterinário CRMV 41.228" class="img-treated w-full h-full object-cover" loading="lazy">
           </div>
-          <!-- Selo CRMV -->
           <div class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-sage-dark text-cream px-5 py-4 rounded-2xl shadow-xl">
             <div class="text-[0.65rem] uppercase tracking-[0.2em] text-sage-light mb-1">Registro oficial</div>
             <div class="font-display text-base sm:text-lg font-500">CRMV-SP 41.228</div>
           </div>
         </div>
       </div>
-
-      <!-- Texto -->
       <div class="md:col-span-7 order-1 md:order-2">
         <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Quem te atende</div>
         <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-400 leading-tight mb-5 sm:mb-6">
@@ -431,7 +426,6 @@
         <p class="text-ink-soft text-base sm:text-lg leading-relaxed mb-6 sm:mb-7">
           Médico veterinário inscrito no <span class="font-500 text-ink">CRMV-SP sob o nº 41.228</span>, com abordagem clínica calma, humanizada e baseada em evidências. Responsável técnico pela LebreVet.
         </p>
-
         <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 max-w-md">
           <div>
             <div class="font-display text-3xl sm:text-4xl text-sage-dark font-500 leading-none mb-1">24h</div>
@@ -442,7 +436,6 @@
             <div class="text-xs sm:text-sm text-ink-soft">Atendimento domiciliar</div>
           </div>
         </div>
-
         <blockquote class="border-l-2 border-terracota pl-5 sm:pl-6 italic font-display text-base sm:text-lg text-ink leading-relaxed">
           "Todo pet merece ser tratado com a mesma calma que a gente trataria um familiar. E todo tutor merece um veterinário que atenda o telefone às 3 da manhã."
           <footer class="mt-3 not-italic font-body text-sm text-ink-soft font-500">— Dr. Eduardo Lebre</footer>
@@ -616,7 +609,6 @@
         </summary>
         <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Sim. O Dr. Eduardo Lebre mantém plantão 24 horas, todos os dias — incluindo madrugadas, domingos e feriados. Basta chamar no WhatsApp a qualquer hora que damos retorno.</p>
       </details>
-
       <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
         <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
           <span>Atendem em qualquer bairro de Marília?</span>
@@ -624,7 +616,6 @@
         </summary>
         <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Atendemos toda Marília e condomínios fechados da região. Basta nos chamar no WhatsApp com seu endereço — confirmamos disponibilidade em minutos.</p>
       </details>
-
       <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
         <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
           <span>O atendimento noturno custa mais caro?</span>
@@ -632,7 +623,6 @@
         </summary>
         <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Consultas em horário noturno (após 22h) ou emergenciais têm valor diferenciado, justo e transparente. Sempre informado antes de qualquer deslocamento — sem surpresa.</p>
       </details>
-
       <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
         <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
           <span>E se meu pet precisar de exame laboratorial?</span>
@@ -640,7 +630,6 @@
         </summary>
         <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Fazemos a coleta na sua casa e levamos para laboratório parceiro. Você recebe os resultados por WhatsApp e fazemos a interpretação clínica com você — sem sair de casa.</p>
       </details>
-
       <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
         <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
           <span>Quem é o veterinário responsável?</span>
@@ -648,7 +637,6 @@
         </summary>
         <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Dr. Eduardo Lebre, médico veterinário com registro no CRMV-SP 41.228, responsável técnico da LebreVet. Ele mesmo atende você — sem intermediários.</p>
       </details>
-
       <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
         <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
           <span>E se for uma emergência grave, com cirurgia?</span>
@@ -656,7 +644,6 @@
         </summary>
         <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Para casos que exigem cirurgia ou internação, fazemos avaliação presencial e encaminhamento imediato para hospital parceiro. Você não fica sozinho em nenhum momento.</p>
       </details>
-
       <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
         <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
           <span>Como faço para agendar?</span>
