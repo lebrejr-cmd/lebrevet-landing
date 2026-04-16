@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#4A5A3F">
-<meta name="description" content="LebreVet — Medicina veterinária domiciliar premium em Marília. Seu pet atendido em casa, sem estresse. Agende pelo WhatsApp.">
+<meta name="description" content="LebreVet — Dr. Eduardo Lebre (CRMV 41.228). Veterinário domiciliar 24 horas em Marília. Seu pet atendido em casa, sem estresse, a qualquer hora. Agende pelo WhatsApp.">
 <meta name="robots" content="index, follow">
 <meta name="format-detection" content="telephone=yes">
-<title>LebreVet | Veterinário em Casa em Marília — Zero Estresse Para Seu Pet</title>
+<title>LebreVet | Veterinário Domiciliar 24h em Marília — Dr. Eduardo Lebre</title>
 
-<meta property="og:title" content="LebreVet | Veterinário em Casa, em Marília">
-<meta property="og:description" content="Seu pet atendido no conforto do lar. Sem transporte, sem filas, sem trauma. A partir de R$ 130.">
+<meta property="og:title" content="LebreVet | Veterinário Domiciliar 24h em Marília">
+<meta property="og:description" content="Dr. Eduardo Lebre (CRMV 41.228) atende seu pet em casa, 24 horas por dia. Sem transporte, sem trauma. A partir de R$ 130.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="images/hero-cao.jpg">
 
@@ -18,11 +18,18 @@
 {
   "@context": "https://schema.org",
   "@type": "VeterinaryCare",
-  "name": "LebreVet — Veterinário Domiciliar",
-  "description": "Medicina veterinária domiciliar premium em Marília-SP",
+  "name": "LebreVet — Veterinário Domiciliar 24h",
+  "description": "Medicina veterinária domiciliar premium 24 horas em Marília-SP, com Dr. Eduardo Lebre (CRMV 41.228)",
   "areaServed": { "@type": "City", "name": "Marília", "addressRegion": "SP" },
   "priceRange": "R$ 130 - R$ 200",
-  "telephone": "+5514996068010"
+  "telephone": "+5514996068010",
+  "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
+  "founder": {
+    "@type": "Person",
+    "name": "Dr. Eduardo Lebre",
+    "jobTitle": "Médico Veterinário",
+    "identifier": "CRMV-SP 41.228"
+  }
 }
 </script>
 
@@ -44,6 +51,7 @@
           'sage': '#6B7F5C', 'sage-dark': '#4A5A3F', 'sage-light': '#A8B89A',
           'terracota': '#C97B5A', 'terracota-dark': '#A55E3F',
           'ink': '#2A2A28', 'ink-soft': '#5A5A56',
+          'midnight': '#1A1F1C',
         }
       }
     }
@@ -84,6 +92,13 @@
     50% { box-shadow: 0 12px 32px -6px rgba(107,127,92,0.55); }
   }
   .cta-pulse { animation: gentle-pulse 2.8s ease-in-out infinite; }
+
+  /* Badge 24h — pulso contínuo verde "ativo" */
+  @keyframes live-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.15); }
+  }
+  .live-dot { animation: live-dot 1.8s ease-in-out infinite; }
 
   @keyframes reveal-up {
     from { opacity: 0; transform: translateY(16px); }
@@ -151,10 +166,43 @@
     outline: 3px solid #C97B5A; outline-offset: 3px; border-radius: 4px;
   }
   input, textarea, select { font-size: 16px; }
+
+  /* Badge 24h especial */
+  .badge-24h {
+    background: linear-gradient(135deg, #C97B5A 0%, #A55E3F 100%);
+    color: #F6F1E8;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.375rem 0.875rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* Barra de emergência topo */
+  .emergency-bar {
+    background: linear-gradient(90deg, #A55E3F 0%, #C97B5A 100%);
+    color: #F6F1E8;
+  }
 </style>
 </head>
 
 <body class="font-body text-ink">
+
+<!-- BARRA DE EMERGÊNCIA NO TOPO -->
+<div class="emergency-bar py-2.5 px-4 text-center text-xs sm:text-sm font-500">
+  <span class="inline-flex items-center gap-2 flex-wrap justify-center">
+    <span class="w-2 h-2 rounded-full bg-cream live-dot"></span>
+    <strong class="font-600">Plantão 24h</strong>
+    <span class="opacity-70">·</span>
+    <span>Emergências atendidas a qualquer hora</span>
+    <span class="opacity-70 hidden sm:inline">·</span>
+    <a href="tel:+5514996068010" class="underline font-600 hover:text-cream-dark transition-colors hidden sm:inline">(14) 99606-8010</a>
+  </span>
+</div>
 
 <!-- HERO -->
 <section class="grain-bg relative overflow-hidden pt-6 pb-16 sm:pt-8 sm:pb-20 md:pt-12 md:pb-28">
@@ -162,11 +210,11 @@
     <header class="flex items-center justify-between mb-8 sm:mb-12 md:mb-20 reveal">
       <div class="flex items-center gap-2">
         <span class="font-display text-2xl sm:text-3xl font-600 text-sage-dark tracking-tight">LebreVet</span>
-        <span class="text-xs text-ink-soft tracking-widest uppercase hidden sm:inline">· Domiciliar</span>
+        <span class="text-xs text-ink-soft tracking-widest uppercase hidden sm:inline">· Domiciliar 24h</span>
       </div>
       <a href="tel:+5514996068010"
          class="sm:hidden flex items-center justify-center w-11 h-11 bg-sage text-cream rounded-full"
-         aria-label="Ligar para LebreVet">
+         aria-label="Ligar para LebreVet 24h">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
       </a>
       <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Vim%20do%20site%20e%20quero%20agendar%20uma%20consulta%20domiciliar%20para%20meu%20pet."
@@ -179,12 +227,12 @@
       <div class="md:col-span-6 md:order-2 reveal reveal-delay-1 relative mb-2 md:mb-0">
         <div class="circular-badge w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 absolute -top-4 -left-1 sm:-top-6 sm:-left-2 md:-top-6 md:-left-8 text-center leading-tight text-xs sm:text-sm z-20 rotate-[-8deg] shadow-xl">
           <div>
-            <div class="text-base sm:text-lg">100%</div>
+            <div class="text-base sm:text-lg">24h</div>
             <div class="text-[0.6rem] sm:text-[0.65rem] tracking-wider uppercase">Em casa</div>
           </div>
         </div>
         <div class="image-frame shadow-2xl">
-          <img src="images/hero-cao.jpg" alt="Cãozinho branco fofo com olhar triste" class="img-treated w-full h-[280px] sm:h-[380px] md:h-[520px] object-cover" fetchpriority="high" loading="eager">
+          <img src="images/hero-cao.jpg" alt="Cãozinho branco fofo com olhar triste aguardando atendimento" class="img-treated w-full h-[280px] sm:h-[380px] md:h-[520px] object-cover" fetchpriority="high" loading="eager">
         </div>
         <div class="absolute -bottom-4 right-3 sm:-bottom-5 sm:right-4 md:-bottom-6 md:right-8 bg-cream-dark border border-sage/20 px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl shadow-xl max-w-[200px] sm:max-w-[240px]">
           <p class="font-display italic text-sm sm:text-base text-ink leading-snug">"Ele não precisa passar por isso."</p>
@@ -192,22 +240,27 @@
       </div>
 
       <div class="md:col-span-6 md:order-1 reveal reveal-delay-2">
-        <div class="inline-flex items-center gap-2 mb-5 sm:mb-6 text-xs uppercase tracking-[0.2em] text-terracota font-500">
-          <span class="w-6 sm:w-8 h-px bg-terracota"></span>
-          Marília · Atendimento domiciliar
+        <div class="inline-flex items-center gap-2 mb-5 sm:mb-6">
+          <span class="badge-24h">
+            <span class="w-1.5 h-1.5 rounded-full bg-cream live-dot"></span>
+            Atendimento 24 horas
+          </span>
         </div>
+
         <h1 class="hero-title font-display font-400 text-ink mb-5 sm:mb-6">
           Seu pet entra em <em class="italic text-terracota">pânico</em> só de ver a caixa de transporte?
         </h1>
+
         <p class="text-base sm:text-lg md:text-xl text-ink-soft leading-relaxed max-w-xl mb-7 sm:mb-8">
-          A <span class="hand-underline font-500 text-ink">LebreVet</span> leva o veterinário até a sua casa. Sem deslocamento. Sem filas. Sem trauma. A partir de <span class="font-500 text-ink">R$ 130</span>.
+          A <span class="hand-underline font-500 text-ink">LebreVet</span> leva o veterinário até a sua casa — <strong class="text-ink font-600">de dia, de noite, madrugada, feriado</strong>. Sem deslocamento. Sem filas. Sem trauma. A partir de <span class="font-500 text-ink">R$ 130</span>.
         </p>
+
         <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-start">
           <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Vim%20do%20an%C3%BAncio%20e%20quero%20agendar%20uma%20consulta%20domiciliar%20para%20meu%20pet." class="cta-pulse btn-primary bg-sage hover:bg-sage-dark text-cream" aria-label="Chamar no WhatsApp">
             <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
             Chamar no WhatsApp
           </a>
-          <span class="text-sm text-ink-soft text-center sm:text-left sm:pt-4">Resposta em minutos · Seg a Sáb</span>
+          <span class="text-sm text-ink-soft text-center sm:text-left sm:pt-4">Resposta em minutos · 24h</span>
         </div>
 
         <div class="mt-8 sm:mt-10 flex items-center gap-3 sm:gap-4">
@@ -227,7 +280,63 @@
   </div>
 </section>
 
-<!-- DOR -->
+<!-- ========= NOVA SEÇÃO: EMERGÊNCIA 24H ========= -->
+<section class="bg-midnight text-cream py-16 sm:py-20 md:py-24 relative overflow-hidden">
+  <!-- decorativo -->
+  <div class="absolute top-0 right-0 w-96 h-96 bg-terracota/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+  <div class="max-w-5xl mx-auto px-5 sm:px-6 relative">
+    <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-center">
+      <div class="md:col-span-7">
+        <div class="inline-flex items-center gap-2 mb-5 sm:mb-6">
+          <span class="w-2 h-2 rounded-full bg-terracota live-dot"></span>
+          <span class="text-xs uppercase tracking-[0.25em] text-terracota font-600">Plantão ativo agora</span>
+        </div>
+
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-400 leading-tight mb-5 sm:mb-6">
+          <em class="italic">3 da manhã</em> e seu pet começou a vomitar?
+        </h2>
+        <p class="text-cream/80 text-base sm:text-lg leading-relaxed mb-7 sm:mb-8">
+          Emergência não espera horário comercial. Na LebreVet, você chama no WhatsApp <strong class="text-cream font-600">a qualquer hora</strong> — madrugada, fim de semana, feriado. Dr. Eduardo vai até você ou te orienta de imediato se for algo que pode aguardar.
+        </p>
+
+        <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-7 sm:mb-8 max-w-md">
+          <div class="border-l-2 border-terracota pl-3 sm:pl-4">
+            <div class="font-display text-2xl sm:text-3xl text-cream font-500 leading-none mb-1">0h–24h</div>
+            <div class="text-xs text-cream/60">Todos os dias</div>
+          </div>
+          <div class="border-l-2 border-terracota pl-3 sm:pl-4">
+            <div class="font-display text-2xl sm:text-3xl text-cream font-500 leading-none mb-1">&lt; 1h</div>
+            <div class="text-xs text-cream/60">Tempo médio de chegada</div>
+          </div>
+        </div>
+
+        <a href="https://wa.me/5514996068010?text=EMERG%C3%8ANCIA%21%20Meu%20pet%20est%C3%A1%20passando%20mal%20e%20preciso%20de%20atendimento%20agora."
+           class="btn-primary bg-terracota hover:bg-terracota-dark text-cream">
+          <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+          Chamar em emergência
+        </a>
+      </div>
+
+      <div class="md:col-span-5">
+        <div class="bg-sage-dark/50 backdrop-blur rounded-3xl p-6 sm:p-8 border border-sage-light/20">
+          <div class="text-xs uppercase tracking-[0.25em] text-terracota font-600 mb-4">Quando chamar</div>
+          <ul class="space-y-3 text-sm sm:text-base text-cream/90">
+            <li class="flex gap-3 items-start"><span class="text-terracota flex-shrink-0 mt-0.5">→</span> Vômito ou diarreia persistente</li>
+            <li class="flex gap-3 items-start"><span class="text-terracota flex-shrink-0 mt-0.5">→</span> Dificuldade para respirar</li>
+            <li class="flex gap-3 items-start"><span class="text-terracota flex-shrink-0 mt-0.5">→</span> Convulsão ou desmaio</li>
+            <li class="flex gap-3 items-start"><span class="text-terracota flex-shrink-0 mt-0.5">→</span> Ingestão de algo tóxico</li>
+            <li class="flex gap-3 items-start"><span class="text-terracota flex-shrink-0 mt-0.5">→</span> Sangramento ou trauma</li>
+            <li class="flex gap-3 items-start"><span class="text-terracota flex-shrink-0 mt-0.5">→</span> Prostração súbita</li>
+            <li class="flex gap-3 items-start"><span class="text-terracota flex-shrink-0 mt-0.5">→</span> Qualquer sinal que te deixe em alerta</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR AMPLIFICADA -->
 <section class="bg-cream-dark py-16 sm:py-20 md:py-28 grain-bg relative">
   <div class="max-w-5xl mx-auto px-5 sm:px-6">
     <div class="text-center mb-12 sm:mb-16">
@@ -240,17 +349,17 @@
       <div class="bg-cream p-6 sm:p-8 rounded-2xl">
         <div class="font-display text-4xl sm:text-5xl text-terracota mb-3 sm:mb-4">01</div>
         <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">A caixa de transporte</h3>
-        <p class="text-ink-soft text-sm leading-relaxed">Ele esconde embaixo da cama. Você luta por 20 minutos. Chega na clínica já tremendo, ofegante, com a frequência cardíaca pelas alturas — o exame já sai comprometido.</p>
+        <p class="text-ink-soft text-sm leading-relaxed">Ele esconde embaixo da cama. Você luta por 20 minutos. Chega na clínica já tremendo, ofegante — o exame já sai comprometido.</p>
       </div>
       <div class="bg-cream p-6 sm:p-8 rounded-2xl">
         <div class="font-display text-4xl sm:text-5xl text-terracota mb-3 sm:mb-4">02</div>
         <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">A sala de espera</h3>
-        <p class="text-ink-soft text-sm leading-relaxed">Latidos, cheiros, outros animais doentes. Seu pet idoso ou com ansiedade fica ainda pior. Você sai mais esgotado do que entrou — e seu pet passa dois dias "esquisito" depois.</p>
+        <p class="text-ink-soft text-sm leading-relaxed">Latidos, cheiros, outros animais doentes. Seu pet idoso ou ansioso fica ainda pior. Você sai mais esgotado do que entrou.</p>
       </div>
       <div class="bg-cream p-6 sm:p-8 rounded-2xl">
         <div class="font-display text-4xl sm:text-5xl text-terracota mb-3 sm:mb-4">03</div>
-        <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">O seu tempo</h3>
-        <p class="text-ink-soft text-sm leading-relaxed">Reservar a tarde inteira para uma consulta de 20 minutos. Trânsito, estacionamento, espera. O custo invisível que ninguém fala — mas que você paga toda vez.</p>
+        <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">O horário da clínica</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">Pet passa mal às 22h, sábado. A clínica já fechou. Você dirige 40 minutos até um pronto-socorro lotado, desesperada. Não é mais assim.</p>
       </div>
     </div>
   </div>
@@ -263,10 +372,10 @@
       <div>
         <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">A solução LebreVet</div>
         <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-400 leading-tight mb-5 sm:mb-6">
-          Medicina veterinária como <em class="italic">deveria ser</em>: no ambiente do paciente.
+          Medicina veterinária como <em class="italic">deveria ser</em>: no ambiente do paciente, a qualquer hora.
         </h2>
         <p class="text-sage-light text-base sm:text-lg leading-relaxed mb-7 sm:mb-8">
-          Chegamos na sua casa com equipamento profissional completo. Avaliação clínica, vacinas, coleta de exames, procedimentos de baixa complexidade — tudo feito no sofá, na varanda, onde seu pet estiver confortável.
+          Chegamos na sua casa com equipamento profissional completo. Consulta clínica, vacinas, coleta de exames, procedimentos — tudo feito no sofá, na varanda, onde seu pet estiver confortável. De dia, de noite ou de madrugada.
         </p>
         <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Quero%20entender%20como%20funciona%20a%20consulta%20domiciliar." class="btn-primary bg-terracota hover:bg-terracota-dark text-cream">
           Agendar pelo WhatsApp →
@@ -274,8 +383,8 @@
       </div>
       <div class="space-y-4 sm:space-y-5">
         <div class="border-l-2 border-terracota pl-5 sm:pl-6">
-          <h4 class="font-display text-lg sm:text-xl font-500 mb-1">Veterinário sênior</h4>
-          <p class="text-sage-light text-sm">Clínico geral experiente, com abordagem calma e técnica precisa.</p>
+          <h4 class="font-display text-lg sm:text-xl font-500 mb-1">Plantão 24 horas</h4>
+          <p class="text-sage-light text-sm">Emergências atendidas a qualquer hora, todos os dias da semana.</p>
         </div>
         <div class="border-l-2 border-terracota pl-5 sm:pl-6">
           <h4 class="font-display text-lg sm:text-xl font-500 mb-1">Equipamento profissional</h4>
@@ -283,19 +392,68 @@
         </div>
         <div class="border-l-2 border-terracota pl-5 sm:pl-6">
           <h4 class="font-display text-lg sm:text-xl font-500 mb-1">Consulta sem pressa</h4>
-          <p class="text-sage-light text-sm">Sem cronômetro. Tempo dedicado para você tirar dúvidas e entender tudo.</p>
+          <p class="text-sage-light text-sm">Sem cronômetro. Tempo dedicado 100% ao seu pet e às suas dúvidas.</p>
         </div>
         <div class="border-l-2 border-terracota pl-5 sm:pl-6">
           <h4 class="font-display text-lg sm:text-xl font-500 mb-1">Cães e gatos</h4>
-          <p class="text-sage-light text-sm">Atendemos de filhotes a geriátricos. Gatos — especialmente — agradecem.</p>
+          <p class="text-sage-light text-sm">De filhotes a geriátricos. Gatos — especialmente — agradecem.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PARA QUEM -->
+<!-- ========= NOVA SEÇÃO: AUTORIDADE DR. EDUARDO ========= -->
 <section class="py-16 sm:py-20 md:py-28 grain-bg relative bg-cream">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6">
+    <div class="grid md:grid-cols-12 gap-8 sm:gap-10 md:gap-16 items-center">
+
+      <!-- Foto/avatar Dr. Eduardo -->
+      <div class="md:col-span-5 order-2 md:order-1">
+        <div class="relative max-w-sm mx-auto">
+          <div class="image-frame shadow-2xl aspect-square">
+            <img src="images/dr-lebre.jpg" alt="Dr. Eduardo Lebre — Médico Veterinário CRMV 41.228" class="img-treated w-full h-full object-cover" loading="lazy">
+          </div>
+          <!-- Selo CRMV -->
+          <div class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 bg-sage-dark text-cream px-5 py-4 rounded-2xl shadow-xl">
+            <div class="text-[0.65rem] uppercase tracking-[0.2em] text-sage-light mb-1">Registro oficial</div>
+            <div class="font-display text-base sm:text-lg font-500">CRMV-SP 41.228</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto -->
+      <div class="md:col-span-7 order-1 md:order-2">
+        <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Quem te atende</div>
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-400 leading-tight mb-5 sm:mb-6">
+          Dr. Eduardo Lebre
+        </h2>
+        <p class="text-ink-soft text-base sm:text-lg leading-relaxed mb-6 sm:mb-7">
+          Médico veterinário inscrito no <span class="font-500 text-ink">CRMV-SP sob o nº 41.228</span>, com abordagem clínica calma, humanizada e baseada em evidências. Responsável técnico pela LebreVet.
+        </p>
+
+        <div class="grid grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8 max-w-md">
+          <div>
+            <div class="font-display text-3xl sm:text-4xl text-sage-dark font-500 leading-none mb-1">24h</div>
+            <div class="text-xs sm:text-sm text-ink-soft">Plantão ativo</div>
+          </div>
+          <div>
+            <div class="font-display text-3xl sm:text-4xl text-sage-dark font-500 leading-none mb-1">100%</div>
+            <div class="text-xs sm:text-sm text-ink-soft">Atendimento domiciliar</div>
+          </div>
+        </div>
+
+        <blockquote class="border-l-2 border-terracota pl-5 sm:pl-6 italic font-display text-base sm:text-lg text-ink leading-relaxed">
+          "Todo pet merece ser tratado com a mesma calma que a gente trataria um familiar. E todo tutor merece um veterinário que atenda o telefone às 3 da manhã."
+          <footer class="mt-3 not-italic font-body text-sm text-ink-soft font-500">— Dr. Eduardo Lebre</footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="py-16 sm:py-20 md:py-28 grain-bg relative bg-cream-dark">
   <div class="max-w-6xl mx-auto px-5 sm:px-6">
     <div class="text-center mb-12 sm:mb-16">
       <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Atendemos todos eles</div>
@@ -310,7 +468,7 @@
         </div>
         <h3 class="font-display text-xl sm:text-2xl font-500 mb-2 sm:mb-3">Gatos que odeiam a caixa</h3>
         <p class="text-ink-soft text-sm sm:text-base leading-relaxed">
-          Para felinos, a clínica é um <span class="hand-underline font-500 text-ink">trauma multiplicado</span>: caixa de transporte, carro, cheiros estranhos, cachorros latindo. Em casa, ele fica no território dele — e a consulta acontece com ele <em>relaxado</em>.
+          Para felinos, a clínica é um <span class="hand-underline font-500 text-ink">trauma multiplicado</span>: caixa de transporte, carro, cheiros estranhos, cachorros latindo. Em casa, ele fica no território dele — a consulta acontece com ele <em>relaxado</em>.
         </p>
       </div>
       <div>
@@ -327,7 +485,7 @@
 </section>
 
 <!-- CUIDADO COMPLETO -->
-<section class="bg-cream-dark py-16 sm:py-20 md:py-28 grain-bg relative">
+<section class="bg-cream py-16 sm:py-20 md:py-28 grain-bg relative">
   <div class="max-w-6xl mx-auto px-5 sm:px-6">
     <div class="grid md:grid-cols-12 gap-8 sm:gap-10 md:gap-16 items-center">
       <div class="md:col-span-7 md:order-1">
@@ -341,14 +499,14 @@
           Cuidado <em class="italic">completo</em>, sem complicação.
         </h2>
         <p class="text-ink-soft text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
-          Da vacina anual ao acompanhamento de pets atletas, geriátricos ou com condições crônicas. Encaminhamos para fisioterapia, cardiologia, ortopedia e hospitais parceiros quando necessário.
+          Da vacina anual ao acompanhamento de pets atletas, geriátricos ou crônicos. Encaminhamos para fisioterapia, cardiologia, ortopedia e hospitais parceiros quando necessário.
         </p>
         <ul class="space-y-2.5 sm:space-y-3 text-ink text-sm sm:text-base mb-6 sm:mb-8">
           <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Clínica geral e check-ups preventivos</li>
           <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Vacinação completa (V10, antirrábica, tríplice felina)</li>
           <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Coleta de exames laboratoriais no local</li>
-          <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Acompanhamento geriátrico e de crônicos</li>
-          <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Rede de especialistas parceiros</li>
+          <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Acompanhamento geriátrico e crônicos</li>
+          <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Emergências 24h e orientação por WhatsApp</li>
         </ul>
         <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Quero%20saber%20sobre%20os%20servi%C3%A7os%20da%20LebreVet." class="inline-flex items-center gap-2 text-sage-dark hover:text-terracota font-500 transition-colors border-b border-sage-dark/30 hover:border-terracota pb-1 min-h-[44px]">
           Ver todos os serviços no WhatsApp →
@@ -359,13 +517,13 @@
 </section>
 
 <!-- PREÇO -->
-<section class="py-16 sm:py-20 md:py-28 grain-bg relative">
+<section class="py-16 sm:py-20 md:py-28 grain-bg relative bg-cream-dark">
   <div class="max-w-4xl mx-auto px-5 sm:px-6 text-center">
     <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Investimento</div>
     <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-400 leading-tight mb-8 sm:mb-10">
       Por um valor similar ao de uma clínica comum, <em class="italic">você economiza o que não tem preço</em>.
     </h2>
-    <div class="inline-block bg-cream-dark rounded-3xl p-8 sm:p-10 md:p-14 max-w-xl mx-auto shadow-lg w-full">
+    <div class="inline-block bg-cream rounded-3xl p-8 sm:p-10 md:p-14 max-w-xl mx-auto shadow-lg w-full">
       <div class="text-xs uppercase tracking-[0.2em] text-ink-soft mb-2 sm:mb-3">Consulta domiciliar completa</div>
       <div class="flex items-baseline justify-center gap-2 mb-5 sm:mb-6">
         <span class="font-display text-base sm:text-lg text-ink-soft">a partir de</span>
@@ -375,6 +533,7 @@
         Sem custo oculto de transporte, estacionamento, estresse animal ou a sua tarde inteira.
         <span class="font-500 text-ink">O preço justo do cuidado certo.</span>
       </p>
+      <p class="text-xs text-ink-soft mb-5 sm:mb-6">Atendimentos em horário noturno ou emergencial podem ter valores diferenciados — confira no WhatsApp.</p>
       <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Quero%20saber%20valores%20e%20agendar%20uma%20consulta%20domiciliar." class="cta-pulse btn-primary bg-sage hover:bg-sage-dark text-cream">
         <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Ver disponibilidade
@@ -384,7 +543,7 @@
 </section>
 
 <!-- COMO FUNCIONA -->
-<section class="bg-cream-dark py-16 sm:py-20 md:py-28 grain-bg relative">
+<section class="bg-cream py-16 sm:py-20 md:py-28 grain-bg relative">
   <div class="max-w-5xl mx-auto px-5 sm:px-6">
     <div class="text-center mb-12 sm:mb-16">
       <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Simples assim</div>
@@ -394,46 +553,46 @@
       <div class="text-center">
         <div class="circular-badge w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl">1</div>
         <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">Você chama no WhatsApp</h3>
-        <p class="text-ink-soft text-sm leading-relaxed max-w-xs mx-auto">Conta rapidinho o caso do seu pet. Sugerimos um horário conveniente — geralmente já na mesma semana.</p>
+        <p class="text-ink-soft text-sm leading-relaxed max-w-xs mx-auto">A qualquer hora. Conta rapidinho o caso do seu pet. Resposta em minutos, 24h por dia.</p>
       </div>
       <div class="text-center">
         <div class="circular-badge w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl">2</div>
-        <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">O veterinário vai até você</h3>
-        <p class="text-ink-soft text-sm leading-relaxed max-w-xs mx-auto">Chegamos pontualmente, com todo o equipamento. Consulta feita no ambiente do pet, com calma.</p>
+        <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">Dr. Eduardo vai até você</h3>
+        <p class="text-ink-soft text-sm leading-relaxed max-w-xs mx-auto">Pontualmente, com todo o equipamento. Consulta feita no ambiente do pet, com calma e profundidade.</p>
       </div>
       <div class="text-center">
         <div class="circular-badge w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl">3</div>
         <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">Acompanhamento contínuo</h3>
-        <p class="text-ink-soft text-sm leading-relaxed max-w-xs mx-auto">Você recebe relatório, orientações e fica com nosso contato direto. Próxima visita, mesmo canal.</p>
+        <p class="text-ink-soft text-sm leading-relaxed max-w-xs mx-auto">Você recebe relatório, orientações e fica com nosso contato direto — a qualquer hora.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- PROVA SOCIAL -->
-<section class="py-16 sm:py-20 md:py-28 grain-bg relative">
+<section class="py-16 sm:py-20 md:py-28 grain-bg relative bg-cream-dark">
   <div class="max-w-5xl mx-auto px-5 sm:px-6">
     <div class="text-center mb-12 sm:mb-16">
       <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Quem já experimentou</div>
       <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-400 leading-tight max-w-3xl mx-auto">Tutores que não voltam mais para a clínica tradicional</h2>
     </div>
     <div class="grid gap-5 sm:gap-6 md:grid-cols-2 md:gap-8">
-      <blockquote class="bg-cream-dark p-6 sm:p-8 md:p-10 rounded-2xl">
+      <blockquote class="bg-cream p-6 sm:p-8 md:p-10 rounded-2xl">
         <div class="flex gap-0.5 text-terracota mb-3 sm:mb-4">★★★★★</div>
         <p class="font-display text-base sm:text-lg md:text-xl font-400 leading-relaxed mb-4 sm:mb-6 text-ink">"Minha gata tinha crise de pânico toda vez. Agora a consulta acontece no sofá dela. Mudou completamente a relação dela com o veterinário."</p>
         <footer class="text-xs sm:text-sm text-ink-soft"><strong class="text-ink font-500">Juliana M.</strong> · Condomínio Esmeraldas · tutora da <em>Nina</em></footer>
       </blockquote>
-      <blockquote class="bg-cream-dark p-6 sm:p-8 md:p-10 rounded-2xl">
+      <blockquote class="bg-cream p-6 sm:p-8 md:p-10 rounded-2xl">
         <div class="flex gap-0.5 text-terracota mb-3 sm:mb-4">★★★★★</div>
-        <p class="font-display text-base sm:text-lg md:text-xl font-400 leading-relaxed mb-4 sm:mb-6 text-ink">"Meu labrador tem 13 anos e não aguentava mais o trajeto. A LebreVet cuida dele com uma atenção que clínica nenhuma deu. Vale cada centavo."</p>
+        <p class="font-display text-base sm:text-lg md:text-xl font-400 leading-relaxed mb-4 sm:mb-6 text-ink">"Meu labrador teve crise às 2h da manhã. Mandei mensagem pro Dr. Eduardo sem esperança, e ele veio. Literalmente salvou a vida dele."</p>
         <footer class="text-xs sm:text-sm text-ink-soft"><strong class="text-ink font-500">Ricardo B.</strong> · Maria Izabel · tutor do <em>Thor</em></footer>
       </blockquote>
-      <blockquote class="bg-cream-dark p-6 sm:p-8 md:p-10 rounded-2xl">
+      <blockquote class="bg-cream p-6 sm:p-8 md:p-10 rounded-2xl">
         <div class="flex gap-0.5 text-terracota mb-3 sm:mb-4">★★★★★</div>
         <p class="font-display text-base sm:text-lg md:text-xl font-400 leading-relaxed mb-4 sm:mb-6 text-ink">"Tenho três gatos. Levar os três na clínica era impossível. Agora vacino todos em 40 minutos, em casa, sem trauma. Gamechanger."</p>
         <footer class="text-xs sm:text-sm text-ink-soft"><strong class="text-ink font-500">Carolina S.</strong> · Jardim Cavallari · tutora de <em>3 felinos</em></footer>
       </blockquote>
-      <blockquote class="bg-cream-dark p-6 sm:p-8 md:p-10 rounded-2xl">
+      <blockquote class="bg-cream p-6 sm:p-8 md:p-10 rounded-2xl">
         <div class="flex gap-0.5 text-terracota mb-3 sm:mb-4">★★★★★</div>
         <p class="font-display text-base sm:text-lg md:text-xl font-400 leading-relaxed mb-4 sm:mb-6 text-ink">"Profissionalismo altíssimo. Chegou na hora, equipamento completo, explicou tudo. Meu filhote estava relaxado porque estava em casa."</p>
         <footer class="text-xs sm:text-sm text-ink-soft"><strong class="text-ink font-500">André P.</strong> · Fragata · tutor do <em>Simba</em></footer>
@@ -452,11 +611,28 @@
     <div class="space-y-2 sm:space-y-3">
       <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
         <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
+          <span>Vocês atendem mesmo de madrugada e feriado?</span>
+          <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
+        </summary>
+        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Sim. O Dr. Eduardo Lebre mantém plantão 24 horas, todos os dias — incluindo madrugadas, domingos e feriados. Basta chamar no WhatsApp a qualquer hora que damos retorno.</p>
+      </details>
+
+      <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
+        <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
           <span>Atendem em qualquer bairro de Marília?</span>
           <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
         </summary>
         <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Atendemos toda Marília e condomínios fechados da região. Basta nos chamar no WhatsApp com seu endereço — confirmamos disponibilidade em minutos.</p>
       </details>
+
+      <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
+        <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
+          <span>O atendimento noturno custa mais caro?</span>
+          <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
+        </summary>
+        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Consultas em horário noturno (após 22h) ou emergenciais têm valor diferenciado, justo e transparente. Sempre informado antes de qualquer deslocamento — sem surpresa.</p>
+      </details>
+
       <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
         <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
           <span>E se meu pet precisar de exame laboratorial?</span>
@@ -464,33 +640,29 @@
         </summary>
         <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Fazemos a coleta na sua casa e levamos para laboratório parceiro. Você recebe os resultados por WhatsApp e fazemos a interpretação clínica com você — sem sair de casa.</p>
       </details>
+
       <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
         <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
-          <span>Vocês aplicam vacinas em casa?</span>
+          <span>Quem é o veterinário responsável?</span>
           <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
         </summary>
-        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Sim. Trazemos a vacina acondicionada adequadamente, aplicamos e emitimos a carteirinha oficial na hora.</p>
+        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Dr. Eduardo Lebre, médico veterinário com registro no CRMV-SP 41.228, responsável técnico da LebreVet. Ele mesmo atende você — sem intermediários.</p>
       </details>
+
       <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
         <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
-          <span>Quanto tempo demora a consulta?</span>
+          <span>E se for uma emergência grave, com cirurgia?</span>
           <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
         </summary>
-        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Entre 40 minutos e 1 hora. Diferente da clínica, não há pressa: o tempo é dedicado 100% ao seu pet e às suas dúvidas.</p>
+        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Para casos que exigem cirurgia ou internação, fazemos avaliação presencial e encaminhamento imediato para hospital parceiro. Você não fica sozinho em nenhum momento.</p>
       </details>
-      <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
-        <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
-          <span>E se for uma emergência?</span>
-          <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
-        </summary>
-        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Para casos que exigem cirurgia ou internação, encaminhamos rapidamente para hospital parceiro. Para urgências clínicas, avaliamos por WhatsApp e vamos o mais rápido possível.</p>
-      </details>
+
       <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
         <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
           <span>Como faço para agendar?</span>
           <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
         </summary>
-        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Chama no nosso WhatsApp agora mesmo. Respondemos em minutos, de segunda a sábado.</p>
+        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Chama no nosso WhatsApp agora mesmo: (14) 99606-8010. Respondemos a qualquer hora, todos os dias.</p>
       </details>
     </div>
   </div>
@@ -501,48 +673,56 @@
   <div class="max-w-3xl mx-auto px-5 sm:px-6 text-center">
     <div class="text-xs uppercase tracking-[0.3em] text-cream/70 font-500 mb-5 sm:mb-6">Último passo</div>
     <h2 class="font-display text-3xl sm:text-4xl md:text-6xl font-400 leading-[1.05] mb-6 sm:mb-8">
-      Seu pet merece ser atendido <em class="italic">onde se sente em casa</em>.
+      Seu pet merece ser atendido <em class="italic">onde se sente em casa</em> — a qualquer hora.
     </h2>
     <p class="text-cream/90 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
-      Agenda limitada a poucas visitas por dia — qualidade sobre quantidade. Garanta seu horário agora.
+      Dr. Eduardo Lebre (CRMV-SP 41.228) está de plantão 24 horas. Chame no WhatsApp agora.
     </p>
     <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Vim%20do%20site%20LebreVet%20e%20quero%20agendar%20uma%20consulta%20domiciliar%20para%20meu%20pet." class="btn-primary bg-cream hover:bg-cream-dark text-sage-dark shadow-2xl text-base sm:text-lg">
       <svg class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-      Falar no WhatsApp
+      Falar no WhatsApp 24h
     </a>
     <p class="text-cream/70 text-xs sm:text-sm mt-6 sm:mt-8">
-      <a href="tel:+5514996068010" class="underline hover:text-cream transition-colors">(14) 99606-8010</a> · Resposta rápida em horário comercial
+      <a href="tel:+5514996068010" class="underline hover:text-cream transition-colors">(14) 99606-8010</a> · Plantão ativo agora
     </p>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="bg-ink text-cream/70 py-10 sm:py-12">
-  <div class="max-w-5xl mx-auto px-5 sm:px-6 flex flex-col md:grid md:grid-cols-3 gap-6 sm:gap-8 items-center">
-    <div class="flex items-center gap-4">
-      <img src="images/dr-lebre.jpg" alt="Dr. Lebre" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-cream/20" loading="lazy">
-      <div>
-        <div class="font-display text-base sm:text-lg text-cream font-500">Dr. Lebre</div>
-        <div class="text-xs text-cream/50">Seu amigo veterinário</div>
+  <div class="max-w-5xl mx-auto px-5 sm:px-6">
+    <div class="flex flex-col md:grid md:grid-cols-3 gap-6 sm:gap-8 items-center mb-8">
+      <div class="flex items-center gap-4">
+        <img src="images/dr-lebre.jpg" alt="Dr. Eduardo Lebre" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-cream/20" loading="lazy">
+        <div>
+          <div class="font-display text-base sm:text-lg text-cream font-500">Dr. Eduardo Lebre</div>
+          <div class="text-xs text-cream/50">CRMV-SP 41.228</div>
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="font-display text-xl sm:text-2xl text-cream font-500 mb-1">LebreVet</div>
+        <div class="text-sm">Medicina veterinária domiciliar 24h</div>
+        <div class="text-sm mt-1">Marília-SP</div>
+        <a href="tel:+5514996068010" class="text-sm mt-1 text-cream hover:text-terracota inline-block">(14) 99606-8010</a>
+      </div>
+      <div class="text-xs text-cream/50 text-center md:text-right">
+        <div class="flex items-center justify-center md:justify-end gap-2 mb-1">
+          <span class="w-1.5 h-1.5 rounded-full bg-terracota live-dot"></span>
+          <strong class="text-cream/80">Plantão 24 horas</strong>
+        </div>
+        <div>Todos os dias, inclusive feriados</div>
       </div>
     </div>
-    <div class="text-center">
-      <div class="font-display text-xl sm:text-2xl text-cream font-500 mb-1">LebreVet</div>
-      <div class="text-sm">Medicina veterinária domiciliar</div>
-      <div class="text-sm mt-1">Marília-SP</div>
-      <a href="tel:+5514996068010" class="text-sm mt-1 text-cream hover:text-terracota inline-block">(14) 99606-8010</a>
-    </div>
-    <div class="text-xs text-cream/50 text-center md:text-right">
-      <div>CRMV-SP</div>
-      <div class="mt-1">Atendimento de segunda a sábado</div>
+    <div class="text-center text-xs text-cream/40 pt-6 border-t border-cream/10">
+      © LebreVet · Responsável técnico: Dr. Eduardo Lebre · CRMV-SP 41.228 · Marília-SP
     </div>
   </div>
 </footer>
 
 <!-- STICKY CTA -->
-<a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Vim%20do%20site%20e%20quero%20agendar%20uma%20consulta%20domiciliar." class="sticky-cta bg-sage hover:bg-sage-dark text-cream py-4 rounded-full font-600 text-center flex items-center justify-center gap-2 text-base" aria-label="Agendar pelo WhatsApp">
+<a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Vim%20do%20site%20e%20quero%20agendar%20uma%20consulta%20domiciliar." class="sticky-cta bg-sage hover:bg-sage-dark text-cream py-4 rounded-full font-600 text-center flex items-center justify-center gap-2 text-base" aria-label="Agendar pelo WhatsApp 24h">
   <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-  Agendar no WhatsApp
+  Agendar no WhatsApp · 24h
 </a>
 
 </body>
