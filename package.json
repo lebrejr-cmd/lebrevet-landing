@@ -1,0 +1,13 @@
+{
+  "name": "lebrevet-landing-page",
+  "version": "1.0.0",
+  "description": "Landing page de conversão da LebreVet — Medicina Veterinária Domiciliar em Marília-SP",
+  "private": true,
+  "scripts": {
+    "dev": "npx serve .",
+    "deploy": "vercel --prod"
+  },
+  "keywords": ["veterinario", "domiciliar", "marilia", "lebrevet"],
+  "author": "LebreVet",
+  "license": "UNLICENSED"
+}

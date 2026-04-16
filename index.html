@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#4A5A3F">
+<meta name="description" content="LebreVet — Medicina veterinária domiciliar premium em Marília. Seu pet atendido em casa, sem estresse. Agende pelo WhatsApp.">
+<meta name="robots" content="index, follow">
+<meta name="format-detection" content="telephone=yes">
+<title>LebreVet | Veterinário em Casa em Marília — Zero Estresse Para Seu Pet</title>
+
+<meta property="og:title" content="LebreVet | Veterinário em Casa, em Marília">
+<meta property="og:description" content="Seu pet atendido no conforto do lar. Sem transporte, sem filas, sem trauma. A partir de R$ 130.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/hero-cao.jpg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VeterinaryCare",
+  "name": "LebreVet — Veterinário Domiciliar",
+  "description": "Medicina veterinária domiciliar premium em Marília-SP",
+  "areaServed": { "@type": "City", "name": "Marília", "addressRegion": "SP" },
+  "priceRange": "R$ 130 - R$ 200",
+  "telephone": "+5514996068010"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          'display': ['Fraunces', 'Georgia', 'serif'],
+          'body': ['Manrope', 'system-ui', 'sans-serif'],
+        },
+        colors: {
+          'cream': '#F6F1E8', 'cream-dark': '#EDE5D3',
+          'sage': '#6B7F5C', 'sage-dark': '#4A5A3F', 'sage-light': '#A8B89A',
+          'terracota': '#C97B5A', 'terracota-dark': '#A55E3F',
+          'ink': '#2A2A28', 'ink-soft': '#5A5A56',
+        }
+      }
+    }
+  }
+</script>
+
+<style>
+  * { -webkit-tap-highlight-color: transparent; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+  body {
+    font-family: 'Manrope', system-ui, sans-serif;
+    background-color: #F6F1E8;
+    color: #2A2A28;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+    overscroll-behavior-y: none;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .font-display { font-family: 'Fraunces', Georgia, serif; font-optical-sizing: auto; }
+
+  a, button, details summary { min-height: 44px; touch-action: manipulation; }
+
+  .grain-bg { position: relative; }
+  .grain-bg::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.07; pointer-events: none; mix-blend-mode: multiply;
+  }
+  .hand-underline {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2,6 Q50,2 100,5 T198,6' stroke='%23C97B5A' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: bottom left; background-size: 100% 0.4em; padding-bottom: 0.2em;
+  }
+
+  @keyframes gentle-pulse {
+    0%, 100% { box-shadow: 0 8px 24px -8px rgba(107,127,92,0.4); }
+    50% { box-shadow: 0 12px 32px -6px rgba(107,127,92,0.55); }
+  }
+  .cta-pulse { animation: gentle-pulse 2.8s ease-in-out infinite; }
+
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { animation: reveal-up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .reveal-delay-1 { animation-delay: 0.1s; }
+  .reveal-delay-2 { animation-delay: 0.25s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  }
+
+  .circular-badge {
+    background-color: #C97B5A; color: #F6F1E8; border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif; font-weight: 500;
+  }
+
+  details[open] summary .chevron { transform: rotate(45deg); }
+  details summary { list-style: none; }
+  details summary::-webkit-details-marker { display: none; }
+  .chevron { transition: transform 0.3s ease; }
+
+  .sticky-cta {
+    position: fixed;
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    left: 0.75rem; right: 0.75rem; z-index: 50;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.15);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  }
+  @media (min-width: 768px) {
+    .sticky-cta { display: none; }
+    body { padding-bottom: 0; }
+  }
+  @media (max-width: 767px) {
+    body { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+  }
+
+  .img-treated {
+    filter: saturate(0.92) contrast(1.02);
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  @media (hover: hover) { .img-treated:hover { transform: scale(1.02); } }
+
+  .image-frame { position: relative; overflow: hidden; border-radius: 1.25rem; }
+  .image-frame::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(42,42,40,0.15), transparent 40%);
+    pointer-events: none;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    gap: 0.75rem; min-height: 56px; padding: 0.875rem 1.75rem;
+    border-radius: 9999px; font-weight: 600; font-size: 1rem;
+    transition: all 0.2s ease; width: 100%;
+  }
+  @media (min-width: 640px) { .btn-primary { width: auto; } }
+  .btn-primary:active { transform: scale(0.97); }
+
+  .hero-title { font-size: clamp(2rem, 8vw, 4.5rem); line-height: 1.05; letter-spacing: -0.02em; }
+
+  a:focus-visible, button:focus-visible, summary:focus-visible {
+    outline: 3px solid #C97B5A; outline-offset: 3px; border-radius: 4px;
+  }
+  input, textarea, select { font-size: 16px; }
+</style>
+</head>
+
+<body class="font-body text-ink">
+
+<!-- HERO -->
+<section class="grain-bg relative overflow-hidden pt-6 pb-16 sm:pt-8 sm:pb-20 md:pt-12 md:pb-28">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <header class="flex items-center justify-between mb-8 sm:mb-12 md:mb-20 reveal">
+      <div class="flex items-center gap-2">
+        <span class="font-display text-2xl sm:text-3xl font-600 text-sage-dark tracking-tight">LebreVet</span>
+        <span class="text-xs text-ink-soft tracking-widest uppercase hidden sm:inline">· Domiciliar</span>
+      </div>
+      <a href="tel:+5514996068010"
+         class="sm:hidden flex items-center justify-center w-11 h-11 bg-sage text-cream rounded-full"
+         aria-label="Ligar para LebreVet">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/></svg>
+      </a>
+      <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Vim%20do%20site%20e%20quero%20agendar%20uma%20consulta%20domiciliar%20para%20meu%20pet."
+         class="text-sm text-sage-dark font-500 hover:text-terracota transition-colors hidden sm:inline">
+        Agendar via WhatsApp →
+      </a>
+    </header>
+
+    <div class="grid md:grid-cols-12 gap-10 md:gap-12 items-center">
+      <div class="md:col-span-6 md:order-2 reveal reveal-delay-1 relative mb-2 md:mb-0">
+        <div class="circular-badge w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 absolute -top-4 -left-1 sm:-top-6 sm:-left-2 md:-top-6 md:-left-8 text-center leading-tight text-xs sm:text-sm z-20 rotate-[-8deg] shadow-xl">
+          <div>
+            <div class="text-base sm:text-lg">100%</div>
+            <div class="text-[0.6rem] sm:text-[0.65rem] tracking-wider uppercase">Em casa</div>
+          </div>
+        </div>
+        <div class="image-frame shadow-2xl">
+          <img src="images/hero-cao.jpg" alt="Cãozinho branco fofo com olhar triste" class="img-treated w-full h-[280px] sm:h-[380px] md:h-[520px] object-cover" fetchpriority="high" loading="eager">
+        </div>
+        <div class="absolute -bottom-4 right-3 sm:-bottom-5 sm:right-4 md:-bottom-6 md:right-8 bg-cream-dark border border-sage/20 px-4 py-2.5 sm:px-5 sm:py-3 rounded-2xl shadow-xl max-w-[200px] sm:max-w-[240px]">
+          <p class="font-display italic text-sm sm:text-base text-ink leading-snug">"Ele não precisa passar por isso."</p>
+        </div>
+      </div>
+
+      <div class="md:col-span-6 md:order-1 reveal reveal-delay-2">
+        <div class="inline-flex items-center gap-2 mb-5 sm:mb-6 text-xs uppercase tracking-[0.2em] text-terracota font-500">
+          <span class="w-6 sm:w-8 h-px bg-terracota"></span>
+          Marília · Atendimento domiciliar
+        </div>
+        <h1 class="hero-title font-display font-400 text-ink mb-5 sm:mb-6">
+          Seu pet entra em <em class="italic text-terracota">pânico</em> só de ver a caixa de transporte?
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-ink-soft leading-relaxed max-w-xl mb-7 sm:mb-8">
+          A <span class="hand-underline font-500 text-ink">LebreVet</span> leva o veterinário até a sua casa. Sem deslocamento. Sem filas. Sem trauma. A partir de <span class="font-500 text-ink">R$ 130</span>.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-start">
+          <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Vim%20do%20an%C3%BAncio%20e%20quero%20agendar%20uma%20consulta%20domiciliar%20para%20meu%20pet." class="cta-pulse btn-primary bg-sage hover:bg-sage-dark text-cream" aria-label="Chamar no WhatsApp">
+            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Chamar no WhatsApp
+          </a>
+          <span class="text-sm text-ink-soft text-center sm:text-left sm:pt-4">Resposta em minutos · Seg a Sáb</span>
+        </div>
+
+        <div class="mt-8 sm:mt-10 flex items-center gap-3 sm:gap-4">
+          <div class="flex -space-x-2 sm:-space-x-3 flex-shrink-0">
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-sage-light border-2 border-cream flex items-center justify-center text-cream text-xs font-600">M</div>
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-terracota border-2 border-cream flex items-center justify-center text-cream text-xs font-600">C</div>
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-sage-dark border-2 border-cream flex items-center justify-center text-cream text-xs font-600">L</div>
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-ink border-2 border-cream flex items-center justify-center text-cream text-xs font-600">+</div>
+          </div>
+          <div class="text-xs sm:text-sm text-ink-soft leading-tight">
+            <div class="flex gap-0.5 text-terracota mb-0.5 text-sm">★★★★★</div>
+            <span class="font-500 text-ink">Tutores em Esmeraldas, Maria Izabel</span> e condomínios fechados.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section class="bg-cream-dark py-16 sm:py-20 md:py-28 grain-bg relative">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6">
+    <div class="text-center mb-12 sm:mb-16">
+      <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">O problema real</div>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-400 leading-tight max-w-3xl mx-auto">
+        Você já desistiu de levar seu pet ao veterinário porque <em class="italic">o estresse não compensava</em>?
+      </h2>
+    </div>
+    <div class="grid gap-5 sm:gap-6 md:grid-cols-3 md:gap-8">
+      <div class="bg-cream p-6 sm:p-8 rounded-2xl">
+        <div class="font-display text-4xl sm:text-5xl text-terracota mb-3 sm:mb-4">01</div>
+        <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">A caixa de transporte</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">Ele esconde embaixo da cama. Você luta por 20 minutos. Chega na clínica já tremendo, ofegante, com a frequência cardíaca pelas alturas — o exame já sai comprometido.</p>
+      </div>
+      <div class="bg-cream p-6 sm:p-8 rounded-2xl">
+        <div class="font-display text-4xl sm:text-5xl text-terracota mb-3 sm:mb-4">02</div>
+        <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">A sala de espera</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">Latidos, cheiros, outros animais doentes. Seu pet idoso ou com ansiedade fica ainda pior. Você sai mais esgotado do que entrou — e seu pet passa dois dias "esquisito" depois.</p>
+      </div>
+      <div class="bg-cream p-6 sm:p-8 rounded-2xl">
+        <div class="font-display text-4xl sm:text-5xl text-terracota mb-3 sm:mb-4">03</div>
+        <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">O seu tempo</h3>
+        <p class="text-ink-soft text-sm leading-relaxed">Reservar a tarde inteira para uma consulta de 20 minutos. Trânsito, estacionamento, espera. O custo invisível que ninguém fala — mas que você paga toda vez.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUÇÃO -->
+<section class="bg-sage-dark text-cream py-16 sm:py-20 md:py-28 relative overflow-hidden">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6">
+    <div class="grid md:grid-cols-2 gap-10 sm:gap-12 md:gap-20 items-center">
+      <div>
+        <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">A solução LebreVet</div>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-400 leading-tight mb-5 sm:mb-6">
+          Medicina veterinária como <em class="italic">deveria ser</em>: no ambiente do paciente.
+        </h2>
+        <p class="text-sage-light text-base sm:text-lg leading-relaxed mb-7 sm:mb-8">
+          Chegamos na sua casa com equipamento profissional completo. Avaliação clínica, vacinas, coleta de exames, procedimentos de baixa complexidade — tudo feito no sofá, na varanda, onde seu pet estiver confortável.
+        </p>
+        <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Quero%20entender%20como%20funciona%20a%20consulta%20domiciliar." class="btn-primary bg-terracota hover:bg-terracota-dark text-cream">
+          Agendar pelo WhatsApp →
+        </a>
+      </div>
+      <div class="space-y-4 sm:space-y-5">
+        <div class="border-l-2 border-terracota pl-5 sm:pl-6">
+          <h4 class="font-display text-lg sm:text-xl font-500 mb-1">Veterinário sênior</h4>
+          <p class="text-sage-light text-sm">Clínico geral experiente, com abordagem calma e técnica precisa.</p>
+        </div>
+        <div class="border-l-2 border-terracota pl-5 sm:pl-6">
+          <h4 class="font-display text-lg sm:text-xl font-500 mb-1">Equipamento profissional</h4>
+          <p class="text-sage-light text-sm">Estetoscópio, oxímetro, termômetro, otoscópio, kit de coleta laboratorial.</p>
+        </div>
+        <div class="border-l-2 border-terracota pl-5 sm:pl-6">
+          <h4 class="font-display text-lg sm:text-xl font-500 mb-1">Consulta sem pressa</h4>
+          <p class="text-sage-light text-sm">Sem cronômetro. Tempo dedicado para você tirar dúvidas e entender tudo.</p>
+        </div>
+        <div class="border-l-2 border-terracota pl-5 sm:pl-6">
+          <h4 class="font-display text-lg sm:text-xl font-500 mb-1">Cães e gatos</h4>
+          <p class="text-sage-light text-sm">Atendemos de filhotes a geriátricos. Gatos — especialmente — agradecem.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM -->
+<section class="py-16 sm:py-20 md:py-28 grain-bg relative bg-cream">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="text-center mb-12 sm:mb-16">
+      <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Atendemos todos eles</div>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-400 leading-tight max-w-3xl mx-auto">
+        Filhotes, geriátricos, ansiosos, <em class="italic">gatos que odeiam sair de casa</em>.
+      </h2>
+    </div>
+    <div class="grid gap-8 sm:gap-6 md:grid-cols-2 md:gap-8">
+      <div>
+        <div class="image-frame shadow-xl mb-5 sm:mb-6 h-64 sm:h-72 md:h-96">
+          <img src="images/gata.jpg" alt="Gatinha tranquila sendo atendida" class="img-treated w-full h-full object-cover" loading="lazy">
+        </div>
+        <h3 class="font-display text-xl sm:text-2xl font-500 mb-2 sm:mb-3">Gatos que odeiam a caixa</h3>
+        <p class="text-ink-soft text-sm sm:text-base leading-relaxed">
+          Para felinos, a clínica é um <span class="hand-underline font-500 text-ink">trauma multiplicado</span>: caixa de transporte, carro, cheiros estranhos, cachorros latindo. Em casa, ele fica no território dele — e a consulta acontece com ele <em>relaxado</em>.
+        </p>
+      </div>
+      <div>
+        <div class="image-frame shadow-xl mb-5 sm:mb-6 h-64 sm:h-72 md:h-96">
+          <img src="images/pastor.jpg" alt="Pastor alemão em ambiente veterinário" class="img-treated w-full h-full object-cover" loading="lazy">
+        </div>
+        <h3 class="font-display text-xl sm:text-2xl font-500 mb-2 sm:mb-3">Cães grandes e geriátricos</h3>
+        <p class="text-ink-soft text-sm sm:text-base leading-relaxed">
+          Dobermann, pastor, labrador idoso com artrose: colocar na caminhonete já é uma operação. Com a LebreVet, tudo acontece com ele <span class="hand-underline font-500 text-ink">deitado na cama dele mesmo</span>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUIDADO COMPLETO -->
+<section class="bg-cream-dark py-16 sm:py-20 md:py-28 grain-bg relative">
+  <div class="max-w-6xl mx-auto px-5 sm:px-6">
+    <div class="grid md:grid-cols-12 gap-8 sm:gap-10 md:gap-16 items-center">
+      <div class="md:col-span-7 md:order-1">
+        <div class="image-frame shadow-2xl h-64 sm:h-80 md:h-[480px]">
+          <img src="images/pitbull.jpg" alt="Cão atlético em centro de bem-estar" class="img-treated w-full h-full object-cover" loading="lazy">
+        </div>
+      </div>
+      <div class="md:col-span-5 md:order-2">
+        <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Mais do que consulta</div>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-400 leading-tight mb-5 sm:mb-6">
+          Cuidado <em class="italic">completo</em>, sem complicação.
+        </h2>
+        <p class="text-ink-soft text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
+          Da vacina anual ao acompanhamento de pets atletas, geriátricos ou com condições crônicas. Encaminhamos para fisioterapia, cardiologia, ortopedia e hospitais parceiros quando necessário.
+        </p>
+        <ul class="space-y-2.5 sm:space-y-3 text-ink text-sm sm:text-base mb-6 sm:mb-8">
+          <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Clínica geral e check-ups preventivos</li>
+          <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Vacinação completa (V10, antirrábica, tríplice felina)</li>
+          <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Coleta de exames laboratoriais no local</li>
+          <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Acompanhamento geriátrico e de crônicos</li>
+          <li class="flex gap-3 items-start"><span class="text-terracota text-lg leading-none mt-0.5 flex-shrink-0">•</span> Rede de especialistas parceiros</li>
+        </ul>
+        <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Quero%20saber%20sobre%20os%20servi%C3%A7os%20da%20LebreVet." class="inline-flex items-center gap-2 text-sage-dark hover:text-terracota font-500 transition-colors border-b border-sage-dark/30 hover:border-terracota pb-1 min-h-[44px]">
+          Ver todos os serviços no WhatsApp →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREÇO -->
+<section class="py-16 sm:py-20 md:py-28 grain-bg relative">
+  <div class="max-w-4xl mx-auto px-5 sm:px-6 text-center">
+    <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Investimento</div>
+    <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-400 leading-tight mb-8 sm:mb-10">
+      Por um valor similar ao de uma clínica comum, <em class="italic">você economiza o que não tem preço</em>.
+    </h2>
+    <div class="inline-block bg-cream-dark rounded-3xl p-8 sm:p-10 md:p-14 max-w-xl mx-auto shadow-lg w-full">
+      <div class="text-xs uppercase tracking-[0.2em] text-ink-soft mb-2 sm:mb-3">Consulta domiciliar completa</div>
+      <div class="flex items-baseline justify-center gap-2 mb-5 sm:mb-6">
+        <span class="font-display text-base sm:text-lg text-ink-soft">a partir de</span>
+        <span class="font-display text-5xl sm:text-6xl md:text-7xl font-500 text-sage-dark">R$130</span>
+      </div>
+      <p class="text-ink-soft text-sm leading-relaxed mb-6 sm:mb-8 max-w-sm mx-auto">
+        Sem custo oculto de transporte, estacionamento, estresse animal ou a sua tarde inteira.
+        <span class="font-500 text-ink">O preço justo do cuidado certo.</span>
+      </p>
+      <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Quero%20saber%20valores%20e%20agendar%20uma%20consulta%20domiciliar." class="cta-pulse btn-primary bg-sage hover:bg-sage-dark text-cream">
+        <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Ver disponibilidade
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="bg-cream-dark py-16 sm:py-20 md:py-28 grain-bg relative">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6">
+    <div class="text-center mb-12 sm:mb-16">
+      <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Simples assim</div>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-400 leading-tight">Como funciona</h2>
+    </div>
+    <div class="grid gap-10 sm:gap-8 md:grid-cols-3 md:gap-12">
+      <div class="text-center">
+        <div class="circular-badge w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl">1</div>
+        <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">Você chama no WhatsApp</h3>
+        <p class="text-ink-soft text-sm leading-relaxed max-w-xs mx-auto">Conta rapidinho o caso do seu pet. Sugerimos um horário conveniente — geralmente já na mesma semana.</p>
+      </div>
+      <div class="text-center">
+        <div class="circular-badge w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl">2</div>
+        <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">O veterinário vai até você</h3>
+        <p class="text-ink-soft text-sm leading-relaxed max-w-xs mx-auto">Chegamos pontualmente, com todo o equipamento. Consulta feita no ambiente do pet, com calma.</p>
+      </div>
+      <div class="text-center">
+        <div class="circular-badge w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl">3</div>
+        <h3 class="font-display text-lg sm:text-xl font-500 mb-2 sm:mb-3">Acompanhamento contínuo</h3>
+        <p class="text-ink-soft text-sm leading-relaxed max-w-xs mx-auto">Você recebe relatório, orientações e fica com nosso contato direto. Próxima visita, mesmo canal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="py-16 sm:py-20 md:py-28 grain-bg relative">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6">
+    <div class="text-center mb-12 sm:mb-16">
+      <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Quem já experimentou</div>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-400 leading-tight max-w-3xl mx-auto">Tutores que não voltam mais para a clínica tradicional</h2>
+    </div>
+    <div class="grid gap-5 sm:gap-6 md:grid-cols-2 md:gap-8">
+      <blockquote class="bg-cream-dark p-6 sm:p-8 md:p-10 rounded-2xl">
+        <div class="flex gap-0.5 text-terracota mb-3 sm:mb-4">★★★★★</div>
+        <p class="font-display text-base sm:text-lg md:text-xl font-400 leading-relaxed mb-4 sm:mb-6 text-ink">"Minha gata tinha crise de pânico toda vez. Agora a consulta acontece no sofá dela. Mudou completamente a relação dela com o veterinário."</p>
+        <footer class="text-xs sm:text-sm text-ink-soft"><strong class="text-ink font-500">Juliana M.</strong> · Condomínio Esmeraldas · tutora da <em>Nina</em></footer>
+      </blockquote>
+      <blockquote class="bg-cream-dark p-6 sm:p-8 md:p-10 rounded-2xl">
+        <div class="flex gap-0.5 text-terracota mb-3 sm:mb-4">★★★★★</div>
+        <p class="font-display text-base sm:text-lg md:text-xl font-400 leading-relaxed mb-4 sm:mb-6 text-ink">"Meu labrador tem 13 anos e não aguentava mais o trajeto. A LebreVet cuida dele com uma atenção que clínica nenhuma deu. Vale cada centavo."</p>
+        <footer class="text-xs sm:text-sm text-ink-soft"><strong class="text-ink font-500">Ricardo B.</strong> · Maria Izabel · tutor do <em>Thor</em></footer>
+      </blockquote>
+      <blockquote class="bg-cream-dark p-6 sm:p-8 md:p-10 rounded-2xl">
+        <div class="flex gap-0.5 text-terracota mb-3 sm:mb-4">★★★★★</div>
+        <p class="font-display text-base sm:text-lg md:text-xl font-400 leading-relaxed mb-4 sm:mb-6 text-ink">"Tenho três gatos. Levar os três na clínica era impossível. Agora vacino todos em 40 minutos, em casa, sem trauma. Gamechanger."</p>
+        <footer class="text-xs sm:text-sm text-ink-soft"><strong class="text-ink font-500">Carolina S.</strong> · Jardim Cavallari · tutora de <em>3 felinos</em></footer>
+      </blockquote>
+      <blockquote class="bg-cream-dark p-6 sm:p-8 md:p-10 rounded-2xl">
+        <div class="flex gap-0.5 text-terracota mb-3 sm:mb-4">★★★★★</div>
+        <p class="font-display text-base sm:text-lg md:text-xl font-400 leading-relaxed mb-4 sm:mb-6 text-ink">"Profissionalismo altíssimo. Chegou na hora, equipamento completo, explicou tudo. Meu filhote estava relaxado porque estava em casa."</p>
+        <footer class="text-xs sm:text-sm text-ink-soft"><strong class="text-ink font-500">André P.</strong> · Fragata · tutor do <em>Simba</em></footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="bg-sage-dark text-cream py-16 sm:py-20 md:py-28">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6">
+    <div class="text-center mb-10 sm:mb-14">
+      <div class="text-xs uppercase tracking-[0.25em] text-terracota font-500 mb-3 sm:mb-4">Perguntas frequentes</div>
+      <h2 class="font-display text-2xl sm:text-3xl md:text-5xl font-400 leading-tight">Ainda com dúvida?</h2>
+    </div>
+    <div class="space-y-2 sm:space-y-3">
+      <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
+        <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
+          <span>Atendem em qualquer bairro de Marília?</span>
+          <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
+        </summary>
+        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Atendemos toda Marília e condomínios fechados da região. Basta nos chamar no WhatsApp com seu endereço — confirmamos disponibilidade em minutos.</p>
+      </details>
+      <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
+        <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
+          <span>E se meu pet precisar de exame laboratorial?</span>
+          <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
+        </summary>
+        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Fazemos a coleta na sua casa e levamos para laboratório parceiro. Você recebe os resultados por WhatsApp e fazemos a interpretação clínica com você — sem sair de casa.</p>
+      </details>
+      <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
+        <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
+          <span>Vocês aplicam vacinas em casa?</span>
+          <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
+        </summary>
+        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Sim. Trazemos a vacina acondicionada adequadamente, aplicamos e emitimos a carteirinha oficial na hora.</p>
+      </details>
+      <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
+        <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
+          <span>Quanto tempo demora a consulta?</span>
+          <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
+        </summary>
+        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Entre 40 minutos e 1 hora. Diferente da clínica, não há pressa: o tempo é dedicado 100% ao seu pet e às suas dúvidas.</p>
+      </details>
+      <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
+        <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
+          <span>E se for uma emergência?</span>
+          <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
+        </summary>
+        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Para casos que exigem cirurgia ou internação, encaminhamos rapidamente para hospital parceiro. Para urgências clínicas, avaliamos por WhatsApp e vamos o mais rápido possível.</p>
+      </details>
+      <details class="border-b border-sage-light/20 py-4 sm:py-5 group">
+        <summary class="flex justify-between items-center cursor-pointer font-display text-lg sm:text-xl font-500 gap-4">
+          <span>Como faço para agendar?</span>
+          <span class="chevron text-terracota text-2xl flex-shrink-0">+</span>
+        </summary>
+        <p class="text-sage-light mt-3 sm:mt-4 leading-relaxed text-sm">Chama no nosso WhatsApp agora mesmo. Respondemos em minutos, de segunda a sábado.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="bg-terracota text-cream py-16 sm:py-20 md:py-32 relative overflow-hidden">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 text-center">
+    <div class="text-xs uppercase tracking-[0.3em] text-cream/70 font-500 mb-5 sm:mb-6">Último passo</div>
+    <h2 class="font-display text-3xl sm:text-4xl md:text-6xl font-400 leading-[1.05] mb-6 sm:mb-8">
+      Seu pet merece ser atendido <em class="italic">onde se sente em casa</em>.
+    </h2>
+    <p class="text-cream/90 text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8 sm:mb-10">
+      Agenda limitada a poucas visitas por dia — qualidade sobre quantidade. Garanta seu horário agora.
+    </p>
+    <a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Vim%20do%20site%20LebreVet%20e%20quero%20agendar%20uma%20consulta%20domiciliar%20para%20meu%20pet." class="btn-primary bg-cream hover:bg-cream-dark text-sage-dark shadow-2xl text-base sm:text-lg">
+      <svg class="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+      Falar no WhatsApp
+    </a>
+    <p class="text-cream/70 text-xs sm:text-sm mt-6 sm:mt-8">
+      <a href="tel:+5514996068010" class="underline hover:text-cream transition-colors">(14) 99606-8010</a> · Resposta rápida em horário comercial
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-ink text-cream/70 py-10 sm:py-12">
+  <div class="max-w-5xl mx-auto px-5 sm:px-6 flex flex-col md:grid md:grid-cols-3 gap-6 sm:gap-8 items-center">
+    <div class="flex items-center gap-4">
+      <img src="images/dr-lebre.jpg" alt="Dr. Lebre" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-cream/20" loading="lazy">
+      <div>
+        <div class="font-display text-base sm:text-lg text-cream font-500">Dr. Lebre</div>
+        <div class="text-xs text-cream/50">Seu amigo veterinário</div>
+      </div>
+    </div>
+    <div class="text-center">
+      <div class="font-display text-xl sm:text-2xl text-cream font-500 mb-1">LebreVet</div>
+      <div class="text-sm">Medicina veterinária domiciliar</div>
+      <div class="text-sm mt-1">Marília-SP</div>
+      <a href="tel:+5514996068010" class="text-sm mt-1 text-cream hover:text-terracota inline-block">(14) 99606-8010</a>
+    </div>
+    <div class="text-xs text-cream/50 text-center md:text-right">
+      <div>CRMV-SP</div>
+      <div class="mt-1">Atendimento de segunda a sábado</div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY CTA -->
+<a href="https://wa.me/5514996068010?text=Ol%C3%A1%21%20Vim%20do%20site%20e%20quero%20agendar%20uma%20consulta%20domiciliar." class="sticky-cta bg-sage hover:bg-sage-dark text-cream py-4 rounded-full font-600 text-center flex items-center justify-center gap-2 text-base" aria-label="Agendar pelo WhatsApp">
+  <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  Agendar no WhatsApp
+</a>
+
+</body>
+</html>
